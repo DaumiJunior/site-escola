@@ -1,0 +1,388 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #000;
+}
+head{
+    position: fixed;
+    padding: 15px 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Estilos para a wrapper */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;}
+    
+    h2, h3, h4, strong, li {
+        color: #000;
+    }
+    
+    /* Estilos para o cabeçalho fixo */
+    header {
+        background-color: #004080;
+        color: #fff;
+        padding: 15px 0;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        font-weight: bold;
+    }
+
+header img {
+    width: 150px; /* Largura ajustada */
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* Estilos para o botão de menu */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.menu-icon .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Mostra o botão de menu em telas menores */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 10px;
+        right: 0;
+        width: 100%;
+        background-color: #006b80;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.show {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0;
+        padding: 5px 10px;
+        text-align: center;
+    }
+}
+
+/* Estilos para os botões de navegação */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 1px; /* Adiciona o espaçamento superior */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Resto do seu código CSS ... */
+
+
+nav ul li a {
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 15px; /* Bordas arredondadas */
+    background-color: #002680; /* Azul forte */
+    color: #fff;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    border: #000000;
+    border-style: solid;
+}
+
+nav ul li a:hover {
+    background-color: #0050A0; /* Tom mais claro do Azul forte */
+    color: #fff;
+}
+
+/* Estilos para o conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 40px;
+    display: flex;
+    top: 150px;
+    position: fixed;
+    left: 150px;
+    margin-block-end: auto;
+}
+
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    background-color: #004080; /* Azul forte */
+    color: #fff;
+    border-radius: 15px; /* Bordas arredondadas */
+    margin-right: 50px; /* Afasta o quadro de avisos */
+    border-color: white;
+    border-style: double;
+}
+
+.notice-list {
+    list-style: none;
+    padding: 0;
+}
+
+.notice-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffffff; /* Azul marinho */
+    border-radius: 15px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.notice-item:hover {
+    background-color: #2A6880; /* Tom mais claro do Azul marinho */
+}
+
+.content {
+    flex: 1.618;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    bottom: auto;
+    border: #000000;
+    border-style: double;
+}
+
+/* Estilos para o rodapé */
+footer {
+    text-align: center;
+    padding: 0,01cm 0;
+    background-color: #004080; /* Azul forte */
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}
+
+
+.hidden {
+    display: none;
+}
+
+/* Estilos para o formulário de login */
+#login-form {
+    background-color: #fdfdfd;
+    padding: 30px;
+    border-radius: 25px;
+    border-color: #000000;
+    border-style: solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#login-form h2 {
+    color: #000000; /* Azul marinho */
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+#login-form .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+#login-form button {
+    background-color: #a10505; /* Vermelho vibrante */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+#login-form button:hover {
+    background-color: #870404; /* Tom mais escuro de vermelho */
+}
+
+#login-form .bottom-links {
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+#login-form .bottom-links a {
+    color: #1a237e; /* Azul marinho */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#login-form .bottom-links a:hover {
+    color: #0d1440; /* Tom mais escuro de azul */
+}
+h2{
+    color: #000000;
+}
+h4{
+    color: #000000;
+}
+h3{
+    color: #000000;
+}
+strong{
+    color: #000000;
+}
+li{
+    color: #000000;
+}
+
+/* Comments Section */
+#comments {
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    margin-left: 50px;
+    border: left 20px;;
+}
+
+#comment-form {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000000;
+}
+
+input[type="text"],
+textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #d9534f; /* Vermelho forte para detalhes */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #c9302c;
+}
+
+#comment-list {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+#comment-list h3 {
+    margin-top: 0;
+}
+
+#comments-ul {
+    list-style: none;
+    padding: 0;
+}
+
+#comments-ul li {
+    margin-bottom: 10px;
+}
+/* Estilos para o menu */
+#menu {
+    background-color: #004080;
+    color: #fff;
+    padding: 100px;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#menu li {
+    margin: 5px 0;
+}
+
+#menu li a {
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: #002680;
+    color: #ffffff;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#menu li a:hover {
+    background-color: #0050A0;
+}
+
+/* Estilos para o perfil */
+#profile {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+#login-form, #register-form {
+    margin-top: 20px;
+}
+

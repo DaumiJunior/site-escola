@@ -1,0 +1,17 @@
+- index.html
+- css/
+  - style.css
+- js/
+  - main.js
+- images/
+- videos/
+- backend/
+  - server.js
+  - database.js
+- data/
+  - movies.json
+  - tv_shows.json
+- auth/
+  - auth.js
+- utils/
+  - helpers.js

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>ETEPPA - Eteppa para alunos</title>
+</head>
+<body>
+    <div class="wrapper"></div>
+    <header>
+        <img src="https://th.bing.com/th/id/R.b05a7a6fef124a1b8812611874b304b4?rik=2Vo0kh50YWaqHw&riu=http%3a%2f%2fwww3.sectet.pa.gov.br%2finscricoes_eetepa%2fpublic%2fimg%2finscricao_eetepa%2flogoEetepaTransparente.png&ehk=L9etK3YrAFGE3opa3S1L3Ta3aVQyxewhHSUtl5dIheY%3d&risl=&pid=ImgRaw&r=0" alt="Logo da ETEPPA">
+        <h1>ETEPPA - Escola de Ensino Técnica Estadual do Pará</h1>
+        <p>Preparando os alunos para um futuro brilhante</p>
+        <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="cursos.html" id="cursos-link">Cursos</a></li>
+            <div id="cursos-content" class="hidden">
+                <h2>Cursos</h2>
+            </div>
+            
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#" id="login-link">Login</a></li>
+            <div id="login-form" class="hidden">
+                <h2>Login</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="username">Usuário:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <button type="submit">Entrar</button>
+                    </div>
+                </form>
+                <div class="bottom-links">
+                    <p><a href="#">Esqueceu a senha?</a></p>
+                    <p>Ainda não tem uma conta? <a href="#">Cadastre-se aqui</a></p>
+                </div>
+            </div>
+            
+        </ul>
+    </nav>
+    </header>
+    <head>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Avisos</h2>
+            <p>Confira aqui os avisos mais recentes da ETEPPA.</p>
+            <ul class="notice-list">
+                <li class="notice-item">Aviso 1: Lorem ipsum dolor sit amet.</li>
+                <li class="notice-item">Aviso 2: Consectetur adipiscing elit.</li>
+                <li class="notice-item">Aviso 3: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+            </ul>
+        </div>
+        <div class="content">
+            <h3>Bem-vindo à ETEPPA!</h3>
+            <p>Estamos comprometidos em fornecer educação de alta qualidade e oportunidades de aprendizado excepcionais para nossos alunos.</p>
+            <h4>Recursos para Alunos</h4>
+            <p>Aqui você encontrará diversos recursos para auxiliar em seus estudos:</p>
+            <ul>
+                <li><a href="#">Material Didático</a></li>
+                <li><a href="#">Calendário Acadêmico</a></li>
+                <li><a href="#">Grade Curricular</a></li>
+                <li><a href="https://www.biblion.org.br/" id="biblioteca-link">Biblioteca Virtual</a></li>
+            </ul>
+            <h3>Eventos e Atividades</h3>
+            <p>Fique por dentro dos eventos e atividades acontecendo na ETEPPA:</p>
+            <ul>
+                <li><a href="#">Semana Cultural</a></li>
+                <li><a href="#">Palestras e Workshops</a></li>
+                <li><a href="#">Competições Acadêmicas</a></li>
+            </ul>
+        </div>
+    </di>
+    <div id="comments">
+        <h2>Comentários</h2>
+        <div id="comment-form">
+            <h4>Deixe um comentário</h3>
+            <form id="new-comment-form">
+                <div class="input-group">
+                    <label for="comment-name">Nome:</label>
+                    <input type="text" id="comment-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="comment-text">Comentário:</label>
+                    <textarea id="comment-text" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div id="comment-list">
+            <h4>Comentários anteriores</h3>
+            <ul id="comments-ul"></ul>
+        </div>
+    </div>
+    
+</head>
+    <footer>
+        <p>&copy; 2023 ETEPPA - eteppa paragominas. Todos os direitos reservados.</p>
+    </footer>
+</div>
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

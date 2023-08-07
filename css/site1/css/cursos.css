@@ -1,0 +1,71 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+    /* Estilos para o cabeçalho fixo */
+    header {
+        background-color: #004080;
+        color: #000000;
+        padding: 15px 0;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        font-weight: bold;
+    }
+
+header img {
+    width: 150px; /* Largura ajustada */
+    height: auto;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 22px;
+}
+
+h2 {
+    color: #004080;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+li:before {
+    content: "\2022";
+    color: #004080;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}/* Estilos para o rodapé */
+footer {
+    text-align: center;
+    padding: 0,01cm 0;
+    background-color: #004080; /* Azul forte */
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+}

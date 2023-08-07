@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daumiflix</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- ... outros elementos do cabeçalho ... -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <!-- Logo Estilizada -->
+        <div class="logo logo-circle">DF</div>
+        <!-- Fim da Logo Estilizada -->
+
+        <div class="nav-links">
+            <a href="#" id="loginBtn">Login</a>
+            <a href="#" id="registerBtn">Register</a>
+            <a href="#" id="profileBtn">Profile</a>
+        </div>
+        <input type="text" placeholder="Search" class="search-box">
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Daumiflix</h1>
+            <p>Unlimited streaming of your favorite movies and TV shows.</p>
+            <button>Get Started</button>
+        </div>
+    </section>
+
+    <!-- Movie/TV Show Categories -->
+    <section class="categories">
+        <div class="category">
+            <h2 class="category-title">Popular Movies</h2>
+            <div class="movies">
+                <div class="movie">
+                    <img src="https://th.bing.com/th/id/OIP.Rgy9vrcQMBP1YVIK1jJ2OwHaE8?w=249&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                        alt="Movie 1">
+                    <div id="vimeo-player-1"></div>
+                </div>
+                <div class="movie">
+                    <img src="https://th.bing.com/th/id/OIP.Rgy9vrcQMBP1YVIK1jJ2OwHaE8?w=249&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                        alt="Movie 2">
+                    <div id="vimeo-player-2"></div>
+                    
+                    <div class="movie">
+                        <img src="https://th.bing.com/th/id/OIP.Rgy9vrcQMBP1YVIK1jJ2OwHaE8?w=249&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                            alt="Movie 3">
+                        <div id="vimeo-player-3"></div>
+           
+                <!-- ... (outros filmes) ... -->
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">Popular TV Shows</h2>
+            <div class="tv-shows">
+                <div class="tv-show">
+                    <img src="images/tv_show1.jpg" alt="TV Show 1">
+                </div>
+                <!-- ... (outros programas de TV) ... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Daumiflix. All rights reserved.</p>
+    </footer>
+
+    <!-- Movie/TV Show Details Modal -->
+    <div class="modal" id="detailsModal">
+        <!-- Details about the selected movie/TV show -->
+    </div>
+
+    <!-- Login/Register Modal -->
+    <div class="modal" id="authModal">
+        <!-- Login/Register form -->
+        <div class="modal-content">
+            <h2 class="modal-title">Login/Register</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">E-mail/Nome de usuário</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+            <p>Não tem uma conta? <a href="#" id="showRegisterForm">Registro</a></p>
+        </div>
+
+        <!-- Register Form (Hidden by default) -->
+        <form id="registerForm" style="display: none;">
+            <div class="form-group">
+                <label for="username">Nome de usuário</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="registerPassword" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar Senha</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit" class="btn-register">Registro</button>
+        </form>
+    </div>
+
+    <!-- User Profile Modal -->
+    <div class="modal" id="profileModal">
+        <!-- User profile and settings -->
+        <div class="modal-content">
+            <h2 class="modal-title">Perfil do Usuário</h2>
+            <!-- Show user information (e.g., name, email, settings, etc.) -->
+            <p class="welcome-msg">Bem-vindo, User123!</p>
+            <p class="email">E-mail: user@example.com</p>
+            <button class="btn-edit-profile">Editar perfil</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Constants
+        const moviesEndpoint = 'backend/movies'; // Endpoint to fetch movie data from the server
+        const tvShowsEndpoint = 'backend/tv_shows'; // Endpoint to fetch TV show data from the server
+
+        // Functions to fetch and display data
+        async function fetchMovies() {
+            // Same as before
+        }
+
+        async function fetchTVShows() {
+            // Same as before
+        }
+
+        // Event listener to open movie/TV show details modal
+        function openDetailsModal(id) {
+            // Same as before
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchMovies();
+            fetchTVShows();
+
+            // Event listener for showing the register form
+            document.getElementById('showRegisterForm').addEventListener('click', () => {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('registerForm').style.display = 'block';
+            });
+
+            // Event listener for showing the login form
+            document.getElementById('showLoginForm').addEventListener('click', () => {
+                document.getElementById('loginForm').style.display = 'block';
+                document.getElementById('registerForm').style.display = 'none';
+            });
+
+            // Event listener for showing the profile modal
+            document.getElementById('profileBtn').addEventListener('click', () => {
+                document.getElementById('profileModal').style.display = 'flex';
+            });
+
+            // Event listener for closing modals
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach((modal) => {
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Event listeners for login/register and user profile
+        document.getElementById('loginForm').addEventListener('submit', async (event) => {
+            // Same as before
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', async (event) => {
+            // Same as before
+        });
+
+        // Replace YOUR_VIDEO_ID with the actual Vimeo video ID you want to display
+        const videoIds = ["YOUR_VIDEO_ID_1", "YOUR_VIDEO_ID_2", "YOUR_VIDEO_ID_3", "YOUR_VIDEO_ID_4"];
+
+        // Initialize Vimeo players
+        const players = videoIds.map((videoId, index) => {
+            return new Vimeo.Player(`vimeo-player-${index + 1}`, {
+                id: videoId,
+                autoplay: false,
+                loop: false,
+                controls: true
+            });
+        });
+
+        // Play the corresponding video when the image is clicked
+        const movieThumbnails = document.querySelectorAll('.movie img');
+        movieThumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                players[index].play();
+            });
+        });
+    </script>
+</body>
+
+</html>
