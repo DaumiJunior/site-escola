@@ -97,8 +97,8 @@ def spawn_enemy():
     # Aumenta a velocidade do inimigo a cada novo nível
     enemy_speed = enemy_speed_increase * player_level
     enemies.append([enemy_x, enemy_y, enemy_speed])
-    
-    # Função para gerar novos inimigos quando necessário
+
+# Função para gerar novos inimigos quando necessário
 def spawn_enemies():
     global current_enemies, last_enemy_spawn_time
 
@@ -108,7 +108,8 @@ def spawn_enemies():
             last_enemy_spawn_time = current_time
             for _ in range(current_enemies):
                 spawn_enemy()
-            current_enemies = 0
+            current_enemies -= 1  # Diminuir o contador de inimigos
+
 # Função para verificar colisões entre o jogador e os inimigos
 def check_collisions_with_enemies():
     global player_lives, is_invincible, invincible_timer
@@ -229,19 +230,15 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-# Gerar novos inimigos a cada 7 segundos após a morte de todos os inimigos
+
+    # Gerar novos inimigos a cada 7 segundos após a morte de todos os inimigos
     if len(enemies) == 0:
         enemy_respawn_timer += get_delta_time()
         if enemy_respawn_timer >= enemy_respawn_time:
-            enemy_respawn_timer = 1
+            enemy_respawn_timer = 0
             current_enemies = enemies_per_level * player_level
-# Contagem regressiva para o próximo spawn de inimigos
-    if current_enemies == 0:
-        timer_text = f"Próximo inimigo em: {int(enemy_respawn_time - enemy_respawn_timer)}s"
-        enemies_text = f"Inimigos restantes: {current_enemies}"
-    else:
-        timer_text = ""
-        enemies_text = ""
+            spawn_enemies()  # Gerar novos inimigos
+
     # Verificar colisões entre jogador e inimigos
     check_collisions_with_enemies()
 
@@ -250,11 +247,6 @@ while True:
     if points_spawn_interval <= 0:
         points_spawn_interval = 2.0  # Reiniciar o intervalo de 2 segundos
         spawn_point()
-
-    # Gerar novos inimigos a cada 10 segundos
-    current_time = pygame.time.get_ticks()
-    if current_time - last_enemy_spawn_time >= enemy_spawn_interval:
-        last_enemy_spawn_time = current_time
 
     # Movimentação do jogador
     keys = pygame.key.get_pressed()
@@ -297,13 +289,16 @@ while True:
 
     # Limpar a tela
     screen.fill(BLACK)
-     # Desenhar o timer na tela
+
+    # Desenhar o timer na tela
     font_timer = pygame.font.SysFont(None, 30)
+    timer_text = f"Próximo inimigo em: {int(enemy_respawn_time - enemy_respawn_timer)}s"
     timer_surface = font_timer.render(timer_text, True, WHITE)
     screen.blit(timer_surface, (10, 10))
 
     # Desenhar a quantidade de inimigos restantes na tela
     font_enemies = pygame.font.SysFont(None, 30)
+    enemies_text = f"Inimigos restantes: {current_enemies}"
     enemies_surface = font_enemies.render(enemies_text, True, WHITE)
     screen.blit(enemies_surface, (10, 40))
 
@@ -314,7 +309,6 @@ while True:
     # Desenhar os inimigos
     for enemy in enemies:
         pygame.draw.rect(screen, RED, (enemy[0], enemy[1], enemy_width, enemy_height))
-
 
     # Desenhar os pontos verdes
     for point in points:

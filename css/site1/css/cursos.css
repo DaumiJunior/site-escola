@@ -8,7 +8,7 @@ body {
 
     /* Estilos para o cabeçalho fixo */
     header {
-        background-color: #004080;
+        background-color: #087223;
         color: #000000;
         padding: 15px 0;
         text-align: center;
@@ -62,7 +62,7 @@ li:before {
 footer {
     text-align: center;
     padding: 0,01cm 0;
-    background-color: #004080; /* Azul forte */
+    background-color: #087223; /* verde forte */
     color: #fff;
     position: fixed;
     bottom: 0;

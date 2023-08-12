@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/CTT.css">
+    <title>Contato</title>
+    <style>
+        /* Estilos de exemplo para a aba de contato */
+        .contact-tab {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .contact-tab a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-tab">
+        <a href="#contact">Entre em contato conosco</a>
+    </div>
+    
+    <!-- Resto do seu conteúdo HTML aqui -->
+    
+    <section id="contact">
+        <h2>Formulário de Contato</h2>
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="message">Mensagem:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+</body>
+</html>
