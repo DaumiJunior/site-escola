@@ -6,7 +6,7 @@ body, h1, h2, h3, h4, p, ul, li {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
+    background-color: #000000;
     color: #000;
 }
 
@@ -41,15 +41,17 @@ ul li {
     position: relative;
     background-color: #25ba45;
     border-radius: 15px;
+    border-color: #000;
+    border-style: solid;
 }
 
 ul li::before {
-    content: "•";
+    content: "O";
     position: absolute;
     left: 0;
     top: 5px;
     font-size: 18px;
-    color: #078322;
+    color: #034d13;
 }
 
 footer {
@@ -58,6 +60,7 @@ footer {
     background-color: #078322;
     color: #fff;
 }
+
 
 em {
     font-style: italic;
